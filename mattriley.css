@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+}
+
+.dev-bar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    padding: 0.2rem 1.5rem;
+    white-space: nowrap;
+    border-top: solid 2px white;
+    color: white;
+    background-color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.dev-bar a {
+    padding-left: 1.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.dev-bar a:hover {
+    text-decoration: underline;
+}
+
+.dev-bar .left {
+    text-align: left;
+}
+
+.dev-bar .right {
+    text-align: right;
+}
+
+.dev-bar .app-name {
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+.dev-bar .author {
+    font-weight: bold;
+    font-family: 'Shadows Into Light';
+}
+
+.wip-bar {
+    background: repeating-linear-gradient(
+        135deg,
+        yellow,
+        yellow 10px,
+        black 10px,
+        black 20px
+    );
+    
+    padding: 0.2rem 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.wip-bar .wip-text {
+    padding: 0 1.5rem;
+    color: black;
+    background-color: yellow;
+    letter-spacing: .1rem;
+}
