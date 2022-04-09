@@ -35,7 +35,7 @@ class DevBar extends HTMLElement {
 
         const linkElem = document.createElement('link');
         linkElem.setAttribute('rel', 'stylesheet');
-        linkElem.setAttribute('href', 'https://github.com/mattriley/mattriley.css');
+        linkElem.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
 
         shadow.appendChild(linkElem);
         shadow.appendChild(devBar);
@@ -65,7 +65,7 @@ class WipBar extends HTMLElement {
 
         const linkElem = document.createElement('link');
         linkElem.setAttribute('rel', 'stylesheet');
-        linkElem.setAttribute('href', 'https://github.com/mattriley/mattriley.css');
+        linkElem.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
 
         shadow.appendChild(linkElem);
         shadow.appendChild(wipBar);
