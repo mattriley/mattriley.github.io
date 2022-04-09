@@ -44,3 +44,33 @@ class DevBar extends HTMLElement {
 }
 
 customElements.define('dev-bar', DevBar);
+
+class WipBar extends HTMLElement {
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        const wipBar = document.createElement('div');
+        wipBar.setAttribute('class', 'wip-bar');
+
+        const wipText = document.createElement('span');
+        wipText.setAttribute('class', 'wip-text');
+        wipText.innerHTML = this.getAttribute('wip-text') || 'WORK IN PROGRESS';
+        wipBar.appendChild(wipText);
+
+        const linkElem = document.createElement('link');
+        linkElem.setAttribute('rel', 'stylesheet');
+        linkElem.setAttribute('href', 'mattriley.css');
+
+        shadow.appendChild(linkElem);
+        shadow.appendChild(wipBar);
+
+    }
+}
+
+customElements.define('wip-bar', WipBar);
