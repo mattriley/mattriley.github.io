@@ -29,6 +29,8 @@ class DevBar extends HTMLElement {
 
         const right = document.createElement('div');
         right.setAttribute('class', 'right');
+        const slot = document.createElement('slot');
+        right.appendChild(slot);
         devBar.append(right);
 
         const linkElem = document.createElement('link');
