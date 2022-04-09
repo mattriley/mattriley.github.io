@@ -8,6 +8,16 @@ class DevBar extends HTMLElement {
 
         const shadow = this.attachShadow({ mode: 'open' });
 
+        const fonts = document.createElement('link');
+        fonts.setAttribute('rel', 'stylesheet');
+        fonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto+Condensed|Shadows+Into+Light');
+        shadow.appendChild(fonts);
+
+        const styles = document.createElement('link');
+        styles.setAttribute('rel', 'stylesheet');
+        styles.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
+        shadow.appendChild(styles);
+
         const devBar = document.createElement('div');
         devBar.setAttribute('class', 'dev-bar');
 
@@ -33,13 +43,7 @@ class DevBar extends HTMLElement {
         right.appendChild(slot);
         devBar.append(right);
 
-        const linkElem = document.createElement('link');
-        linkElem.setAttribute('rel', 'stylesheet');
-        linkElem.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
-
-        shadow.appendChild(linkElem);
         shadow.appendChild(devBar);
-
     }
 }
 
@@ -55,6 +59,16 @@ class WipBar extends HTMLElement {
 
         const shadow = this.attachShadow({ mode: 'open' });
 
+        const fonts = document.createElement('link');
+        fonts.setAttribute('rel', 'stylesheet');
+        fonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto+Condensed|Shadows+Into+Light');
+        shadow.appendChild(fonts);
+
+        const styles = document.createElement('link');
+        styles.setAttribute('rel', 'stylesheet');
+        styles.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
+        shadow.appendChild(styles);
+
         const wipBar = document.createElement('div');
         wipBar.setAttribute('class', 'wip-bar');
 
@@ -63,13 +77,7 @@ class WipBar extends HTMLElement {
         wipText.innerHTML = this.getAttribute('wip-text') || 'WORK IN PROGRESS';
         wipBar.appendChild(wipText);
 
-        const linkElem = document.createElement('link');
-        linkElem.setAttribute('rel', 'stylesheet');
-        linkElem.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
-
-        shadow.appendChild(linkElem);
         shadow.appendChild(wipBar);
-
     }
 }
 
