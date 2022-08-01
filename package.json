@@ -1,0 +1,59 @@
+{
+    "name": "mattriley.github.io",
+    "version": "0.1.0",
+    "description": "",
+    "homepage": "https://github.com/mattriley/mattriley.github.io",
+    "repository": "github:mattriley/mattriley.github.io",
+    "author": {
+        "name": "Matt Riley",
+        "email": "m@ttriley.dev",
+        "url": "https://github.com/mattriley"
+    },
+    "bugs": {
+        "url": "https://github.com/mattriley/mattriley.github.io/issues",
+        "email": "m@ttriley.dev"
+    },
+    "private": true,
+    "scripts": {
+        "cov": "npx task cov",
+        "deploy": "npx task deploy",
+        "dist": "parcel build ./src/web-components.js",
+        "lint": "npx task lint",
+        "pre": "npx task pre",
+        "start": "npx task start",
+        "test": "npx task test"
+    },
+    "dependencies": {
+        "@swc/helpers": "^0.4.3",
+        "module-composer": "^0.56.0"
+    },
+    "devDependencies": {
+        "cloc": "^2.10.0",
+        "doctoc": "^2.2.0",
+        "eslint": "^8.21.0",
+        "husky": "^8.0.1",
+        "module-indexgen": "^0.15.2",
+        "parcel": "^2.6.2",
+        "task-library": "^0.43.0"
+    },
+    "targets": {
+        "default": {
+            "source": "./src/web-components.js",
+            "includeNodeModules": true,
+            "context": "browser",
+            "outputFormat": "global"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
