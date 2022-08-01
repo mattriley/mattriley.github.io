@@ -15,7 +15,7 @@ class DevBar extends HTMLElement {
 
         const styles = document.createElement('link');
         styles.setAttribute('rel', 'stylesheet');
-        styles.setAttribute('href', 'https://mattriley.github.io/mattriley.css');
+        styles.setAttribute('href', 'https://mattriley.github.io/web-components.css');
         shadow.appendChild(styles);
 
         const devBar = document.createElement('div');
