@@ -1,17 +1,15 @@
-module.exports = () => {
+module.exports = class WipBar extends HTMLElement {
 
-    class WipBar extends HTMLElement {
+    constructor() {
+        super();
+    }
 
-        constructor() {
-            super();
-        }
+    connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const styles = document.createElement('style');
+        shadow.appendChild(styles);
 
-        connectedCallback() {
-            const shadow = this.attachShadow({ mode: 'open' });
-            const styles = document.createElement('style');
-            shadow.appendChild(styles);
-
-            styles.innerHTML = `
+        styles.innerHTML = `
 .wip-bar {
     background: repeating-linear-gradient(
         135deg,
@@ -34,20 +32,14 @@ module.exports = () => {
     letter-spacing: .1rem;
 }`;
 
-            const wipBar = document.createElement('div');
-            wipBar.setAttribute('class', 'wip-bar');
+        const wipBar = document.createElement('div');
+        wipBar.setAttribute('class', 'wip-bar');
 
-            const wipText = document.createElement('span');
-            wipText.setAttribute('class', 'wip-text');
-            wipText.innerHTML = this.getAttribute('wip-text') || 'WORK IN PROGRESS';
-            wipBar.appendChild(wipText);
+        const wipText = document.createElement('span');
+        wipText.setAttribute('class', 'wip-text');
+        wipText.innerHTML = this.getAttribute('wip-text') || 'WORK IN PROGRESS';
+        wipBar.appendChild(wipText);
 
-            shadow.appendChild(wipBar);
-        }
+        shadow.appendChild(wipBar);
     }
-
-    return WipBar;
-
 };
-
-

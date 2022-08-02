@@ -1,17 +1,15 @@
-module.exports = () => {
+module.exports = class DevBar extends HTMLElement {
 
-    class DevBar extends HTMLElement {
+    constructor() {
+        super();
+    }
 
-        constructor() {
-            super();
-        }
+    connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const styles = document.createElement('style');
+        shadow.appendChild(styles);
 
-        connectedCallback() {
-            const shadow = this.attachShadow({ mode: 'open' });
-            const styles = document.createElement('style');
-            shadow.appendChild(styles);
-
-            styles.innerHTML = `
+        styles.innerHTML = `
 .dev-bar {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -53,35 +51,31 @@ module.exports = () => {
     font-family: 'Shadows Into Light';
 }`;
 
-            const devBar = document.createElement('div');
-            devBar.setAttribute('class', 'dev-bar');
+        const devBar = document.createElement('div');
+        devBar.setAttribute('class', 'dev-bar');
 
-            const left = document.createElement('div');
-            left.setAttribute('class', 'left');
-            devBar.appendChild(left);
+        const left = document.createElement('div');
+        left.setAttribute('class', 'left');
+        devBar.appendChild(left);
 
-            const appName = document.createElement('span');
-            appName.setAttribute('class', 'app-name');
-            appName.textContent = this.getAttribute('app-name');
-            left.appendChild(appName);
+        const appName = document.createElement('span');
+        appName.setAttribute('class', 'app-name');
+        appName.textContent = this.getAttribute('app-name');
+        left.appendChild(appName);
 
-            const author = document.createElement('a');
-            author.setAttribute('class', 'author');
-            author.setAttribute('_target', 'blank');
-            author.setAttribute('href', 'https://www.linkedin.com/in/mattrileyau/');
-            author.textContent = 'by Matt Riley';
-            left.appendChild(author);
+        const author = document.createElement('a');
+        author.setAttribute('class', 'author');
+        author.setAttribute('_target', 'blank');
+        author.setAttribute('href', 'https://www.linkedin.com/in/mattrileyau/');
+        author.textContent = 'by Matt Riley';
+        left.appendChild(author);
 
-            const right = document.createElement('div');
-            right.setAttribute('class', 'right');
-            const slot = document.createElement('slot');
-            right.appendChild(slot);
-            devBar.append(right);
+        const right = document.createElement('div');
+        right.setAttribute('class', 'right');
+        const slot = document.createElement('slot');
+        right.appendChild(slot);
+        devBar.append(right);
 
-            shadow.appendChild(devBar);
-        }
+        shadow.appendChild(devBar);
     }
-
-    return DevBar;
-
 };
