@@ -1,15 +1,15 @@
 module.exports = () => {
 
-    return class WipBar extends HTMLElement {
+    class WipBar extends HTMLElement {
 
         constructor() {
             super();
-            this.attachShadow({ mode: 'open' });
         }
 
         connectedCallback() {
+            const shadow = this.attachShadow({ mode: 'open' });
             const styles = document.createElement('style');
-            this.shadowRoot.appendChild(styles);
+            shadow.appendChild(styles);
 
             styles.innerHTML = `
 .wip-bar {
@@ -42,7 +42,12 @@ module.exports = () => {
             wipText.innerHTML = this.getAttribute('wip-text') || 'WORK IN PROGRESS';
             wipBar.appendChild(wipText);
 
-            this.shadowRoot.appendChild(wipBar);
+            shadow.appendChild(wipBar);
         }
-    };
+    }
+
+    return WipBar;
+
 };
+
+
