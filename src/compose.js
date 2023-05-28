@@ -1,9 +1,10 @@
 const composer = require('module-composer');
 const modules = require('./modules');
 
-module.exports = ({ compositionName, configs }) => {
+module.exports = ({ config }) => {
 
-    const { compose } = composer(modules, { compositionName, configs });
+    const { configure } = composer(modules);
+    const { compose } = configure(config);
     return compose.end();
 
 };

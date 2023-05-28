@@ -1,7 +1,6 @@
 const compose = require('./compose');
 
-const compositionName = 'Matt Riley web components';
-const composition = compose({ compositionName });
+const composition = compose({});
 const { webComponents } = composition.modules;
 customElements.define('dev-bar', webComponents.DevBar);
 customElements.define('wip-bar', webComponents.WipBar);
