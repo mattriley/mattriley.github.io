@@ -24,8 +24,8 @@
         "test": "npx task test"
     },
     "dependencies": {
-        "@swc/helpers": "^0.4.3",
-        "module-composer": "^0.56.0"
+        "@swc/helpers": "^0.5.1",
+        "module-composer": "^0.119.0"
     },
     "devDependencies": {
         "cloc": "^2.11.0",
@@ -34,10 +34,10 @@
         "eslint": "^8.41.0",
         "eslint-plugin-import": "^2.27.5",
         "husky": "^8.0.3",
-        "module-indexgen": "^0.15.2",
+        "module-indexgen": "^0.34.0",
         "npm-check-updates": "^16.10.12",
-        "parcel": "^2.6.2",
-        "task-library": "^0.218.0"
+        "parcel": "^2.9.1",
+        "task-library": "^0.219.0"
     },
     "targets": {
         "default": {
