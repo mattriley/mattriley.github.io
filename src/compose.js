@@ -3,8 +3,7 @@ const modules = require('./modules');
 
 module.exports = ({ config }) => {
 
-    const { configure } = composer(modules);
-    const { compose } = configure(config);
-    return compose.end();
+    const { compose } = composer(modules, { config });
+    return compose.asis('webComponents');
 
 };

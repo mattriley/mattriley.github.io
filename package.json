@@ -20,24 +20,25 @@
         "dist": "parcel build ./src/web-components.js",
         "lint": "npx task lint",
         "pre": "npx task pre",
+        "setup": "npm i && npx task setup",
         "start": "npx task start",
         "test": "npx task test"
     },
     "dependencies": {
         "@swc/helpers": "^0.5.1",
-        "module-composer": "^0.119.0"
+        "module-composer": "^0.149.0"
     },
     "devDependencies": {
         "cloc": "^2.11.0",
         "doctoc": "^2.2.1",
         "ejs": "^3.1.9",
-        "eslint": "^8.41.0",
-        "eslint-plugin-import": "^2.27.5",
+        "eslint": "^8.48.0",
+        "eslint-plugin-import": "^2.28.1",
         "husky": "^8.0.3",
-        "module-indexgen": "^0.34.0",
-        "npm-check-updates": "^16.10.12",
-        "parcel": "^2.9.1",
-        "task-library": "^0.219.0"
+        "module-indexgen": "^0.38.0",
+        "npm-check-updates": "^16.13.2",
+        "parcel": "^2.9.3",
+        "task-library": "^0.269.0"
     },
     "targets": {
         "default": {
